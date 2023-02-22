@@ -2,16 +2,29 @@ import React, {useState, useEffect} from "react";
 
 export default function Counter (){
     const [counter, setCounter] = useState(0)
-   
+       
     useEffect(()=> {
         const timer = setInterval(() => {
             setCounter(prevCounter => prevCounter + 1)
         }, 1000)
-        return timer
+
+        return () => {
+            clearInterval(timer)
+        }
     },[])
 
+    useEffect(() => {
+        console.log('everytime')
+        return () => {
+            console.log('called before')
+        }
+    }, [])
+
     return(
-        <span>{counter}</span>
+        <>
+            <span>{counter} secs</span>
+        </>
+        
         
 )
 }

@@ -1,13 +1,14 @@
 import React from "react";
-import Counter from "./Components/Counter"
-import Header from "./Components/Header"
-
+import Search from './Components/Search'
 
 export default function App(){
     return(
         <>
-            <Header text={'Hit it'}/>
-            <Counter />
+        <div className = "ui grid container center aligned">
+            <div className = " column eight wide">
+                <Search />
+            </div>
+        </div>
         </>
     )
 }

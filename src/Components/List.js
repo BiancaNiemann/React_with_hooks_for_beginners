@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function List({ results}){
     const renderedList = results.map(item => {
@@ -6,7 +6,9 @@ export default function List({ results}){
             <div key={item.pageid} className="ui segment">
             <h2>
                 <a 
-                href={`https://en.wikipedia.org?curid=${item.pageid}` } target="_blank"className="Header">{item.title}
+                href={`https://en.wikipedia.org?curid=${item.pageid}` } target="_blank"className="Header"
+                rel="noreferrer"
+                >{item.title}
                 </a>
             </h2>
             <p dangerouslySetInnerHTML={{__html: item.snippet}}></p>
